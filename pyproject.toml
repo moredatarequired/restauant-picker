@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "restauant-picker"
+version = "0.1.0"
+description = "Randomly select a restaurant"
+authors = ["Hugh Wimberly <hugh.wimberly@gmail.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+
+[tool.poetry.dev-dependencies]
+black = "^20.8b1"
+flake8 = "^3.8.4"
+pre-commit = "^2.10.1"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
