@@ -5,6 +5,6 @@ from aws_cdk import core
 from cdk.cdk_stack import CdkStack
 
 app = core.App()
-CdkStack(app, "cdk-workshop", env={"region": "us-west-2"})
+CdkStack(app, "restaurant-picker", env={"region": "us-west-2"})
 
 app.synth()
