@@ -23,6 +23,7 @@ class DeployPipelineStack(Stack):
                 trigger=codepipeline_actions.GitHubTrigger.POLL,
                 owner="moredatarequired",
                 repo="restauant-picker",
+                branch="main",
             ),
             synth_action=SimpleSynthAction(
                 source_artifact=source_artifact,
