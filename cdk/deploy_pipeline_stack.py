@@ -28,6 +28,6 @@ class DeployPipelineStack(Stack):
             synth_action=SimpleSynthAction(
                 source_artifact=source_artifact,
                 cloud_assembly_artifact=cloud_assembly_artifact,
-                synth_command="cdk synth",
+                synth_command="npx cdk synth",
             ),
         )
