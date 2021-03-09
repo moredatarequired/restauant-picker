@@ -3,8 +3,17 @@
 from aws_cdk import core
 
 from cdk.cdk_stack import CdkStack
+from cdk.deploy_pipeline_stack import DeployPipelineStack
+
+AWS_REGION = "us-west-2"
+AWS_ACCOUNT_ID = "724169626350"
 
 app = core.App()
-CdkStack(app, "restaurant-picker", env={"region": "us-west-2"})
+CdkStack(app, "restaurant-picker", env={"region": AWS_REGION})
 
+DeployPipelineStack(
+    app,
+    "deploy-pipeline",
+    env=core.Environment(account=AWS_ACCOUNT_ID, region=AWS_REGION),
+)
 app.synth()
