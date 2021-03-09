@@ -3,7 +3,7 @@ from aws_cdk import aws_apigateway, aws_lambda, core
 from cdk.hitcounter import HitCounter
 
 
-class CdkStack(core.Stack):
+class RestaurantPickerStack(core.Stack):
     def __init__(self, scope: core.Construct, construct_id: str, **kwargs) -> None:
         super().__init__(scope, construct_id, **kwargs)
 
