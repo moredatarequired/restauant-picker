@@ -28,7 +28,7 @@ class DeployPipelineStack(Stack):
             synth_action=SimpleSynthAction(
                 source_artifact=source_artifact,
                 cloud_assembly_artifact=cloud_assembly_artifact,
-                install_commands=["pip install poetry", "poetry install"],
+                install_commands=["pip install poetry", "poetry install --no-dev"],
                 synth_command="poetry run npx cdk synth",
             ),
         )
