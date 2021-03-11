@@ -3,10 +3,21 @@ import json
 import pytest
 from aws_cdk import core
 
-from cdk.cdk_stack import CdkStack
+from cdk.deploy_pipeline_stack import DeployPipelineStack
+from cdk.restaurant_picker_stack import RestaurantPickerStack
+from cdk.util import camel_to_kebab
 
 
-def get_template():
+def get_template(stack):
     app = core.App()
-    CdkStack(app, "cdk")
-    return json.dumps(app.synth().get_stack("cdk").template)
+    stack_name = camel_to_kebab(stack.__name__)
+    stack(app, stack_name)
+    return json.dumps(app.synth().get_stack(stack_name).template)
+
+
+def test_restaurant_picker_stack():
+    template = get_template(RestaurantPickerStack)
+
+
+def test_deploy_pipeline_stack():
+    template = get_template(DeployPipelineStack)
